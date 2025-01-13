@@ -105,7 +105,7 @@ if st.session_state.toa and st.session_state.switch==False:
         a, teamnames, score = match_details(st.session_state.mmid)
         headtohead(a, teamnames, score)
     elif st.session_state.toa == "playerwise":
-        a, teamnames, score = match_details(st.session_state.mmid)
+        #a, teamnames, score = match_details(st.session_state.mmid)
         #headtohead(a, teamnames, score)
         #get_player_stats(a, records,st)
         plotting(st.session_state.mmid)
