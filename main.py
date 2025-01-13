@@ -104,7 +104,7 @@ if st.session_state.toa and st.session_state.switch==False:
     if st.session_state.toa == "head to head":
         a, teamnames, score = match_details(st.session_state.mmid)
         headtohead(a, teamnames, score)
-    elif st.session_state.toa == "playerwise":
+    elif st.session_state.toa == "player wise":
         #a, teamnames, score = match_details(st.session_state.mmid)
         #headtohead(a, teamnames, score)
         #get_player_stats(a, records,st)
