@@ -460,7 +460,7 @@ def create_radar_chart(stats, name, pos, color1, color2, color3):
     st.pyplot(plt)
 
 def re_plotting(pos_check,jdata):
-    st.markdown("Away Team")
+    st.markdown("#Away Team")
     records = {}
     for i in jdata['away']['players']:
         # print(i.keys())
@@ -530,7 +530,7 @@ def re_plotting(pos_check,jdata):
         c1, c2, c3 = random.sample(colors, 3)
         create_radar_chart(x, name, pos_check[pos], c1, c2, c3)
 def plotting(mid="12437809"):
-    st.markdown("Home Team")
+    st.markdown("#Home Team")
     pos_check = {'G': 'Goalkeeper', 'D': 'Defender', 'M': 'Midfielder', 'F': 'Forward'}
     # plt.savefig("test2.jpg")
     url = f'https://www.sofascore.com/api/v1/event/{mid}/lineups'
