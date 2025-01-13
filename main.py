@@ -8,7 +8,7 @@ from datetime import datetime
 from individual_analysis import main as indiv
 
 # Streamlit UI
-st.title("Fotmob Analyser")
+st.title("Sofascore Analyser")
 st.write(datetime.today())
 
 # Toggle for individual stats analysis
