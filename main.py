@@ -1,11 +1,15 @@
 import os
 import streamlit as st
 import requests
-from operations import match_id_init
+from operations import match_id_init,conn_make
 from test import headtohead,match_details,plotting
 from num_fotmob import main as numerology
 from datetime import datetime
 from individual_analysis import main as indiv
+
+import json
+import urllib.request
+import urllib.parse
 
 # Streamlit UI
 st.title("Sofascore Analyser")
@@ -32,6 +36,7 @@ if on:
 
 # Initialize session state variables (more comprehensive)
 if 'initialized' not in st.session_state:
+    #st.session_state.conn=None
     st.session_state.initialized = True
     st.session_state.choice2 = None
     st.session_state.mmid = None
@@ -44,11 +49,13 @@ if 'initialized' not in st.session_state:
     st.session_state.pname = None
     st.session_state.confirmed = False
     st.session_state.choices = {}
+    #st.session_state.conn=None
 
 # Button to start the analysis (only if individual stats toggle is off)
 if st.button("Start") and not st.session_state.switch:
 
     contents = match_id_init()
+    conn_make()
     choices = {}
     for i in contents:
         print(i)
@@ -110,6 +117,8 @@ if st.session_state.toa and st.session_state.switch==False:
         #get_player_stats(a, records,st)
         plotting(st.session_state.mmid)
     elif st.session_state.toa == "numerology":
-        numerology(st.session_state.mmid, st)
+        numerology()
+        #st.write(st.session_state.mmid)
+        #st.write(st.session_state.conn)
 if st.button("Refresh"):
     st.rerun()

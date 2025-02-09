@@ -5,3 +5,4 @@ matplotlib
 requests
 seaborn
 bs4
+timezonefinder

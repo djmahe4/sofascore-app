@@ -12,6 +12,16 @@ import http.client
 import http.cookiejar
 from num_fotmob import extraction
 import streamlit as st
+from urllib.parse import urlparse
+import http.client
+@st.cache_resource
+def conn_make():
+    if 'conn' not in st.session_state:
+        url = f"https://www.sofascore.com/api/v1/event/12527965"
+        parsed = urlparse(url)
+        conn = http.client.HTTPSConnection(parsed.netloc)
+        st.session_state.conn=conn
+
 
 positions={2:"Midfielder",3:"Forward",1:"Defender",0:"Goalkeeper"}
 
@@ -94,6 +104,7 @@ def performance(id,vs):
         return 0
 
 def match_id_init():
+    conn_make()
     # requests.get("https://www.fotmob.com/matches")
     # global st
 
