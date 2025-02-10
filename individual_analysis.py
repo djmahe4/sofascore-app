@@ -376,7 +376,7 @@ def main():
                 season_comparison_destruct()
                 get_season_stats_destruct()
                 get_data_destruct()
-        st.write(st.session_state)
+        #st.write(st.session_state)
     elif st.session_state.choice2=="Season Stats Comparison":
         if "posa" not in st.session_state:
             st.session_state.posa=None

@@ -522,7 +522,7 @@ def main():
                         }
                     }
                     st.write("Selected players:", st.session_state.selected_players)
-                    st.write("Final data:", st.session_state.diff_returned)
+                    #st.write("Final data:", st.session_state.diff_returned)
                     #for i in st.session_state.diff_returned:
                         #st.write(i,st.session_state.diff_returned[i])
                     get_dataframe()
