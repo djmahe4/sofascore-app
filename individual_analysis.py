@@ -3,6 +3,7 @@ import requests,json
 from check import get_season_stats,season_comparison,get_season_stats_destruct,season_comparison_destruct
 from operations import retry,get_sofascore
 import datetime
+from multi_test import main as mult_comp
 
 desired = {
         "Goalkeeper": [
@@ -409,6 +410,8 @@ def main():
             get_season_stats_destruct()
             season_comparison_destruct()
             get_data_destruct()
+    elif st.session_state.choice2 == "Player v Player comparison":
+        mult_comp()
     st.divider()
 if __name__ =="__main__":
     main()
