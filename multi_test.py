@@ -11,7 +11,7 @@ import streamlit as st
 from urllib.parse import urlparse
 import http.client
 import datetime
-from icecream import ic
+#from icecream import ic
 def destruct_all():
     st.session_state.mul_sele = 0
     # Initialize session state variables if they are not already set
