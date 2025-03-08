@@ -471,7 +471,8 @@ def main():
                 st.session_state.teams = {}
                 st.session_state.players = {}
 
-        # Display teams
+        # Display leagues
+        st.warning("Please try to avoid collitions (eg: Pedri in laliga vs Pedri in champions league)")
         if st.session_state.opt2 and st.session_state.teams == {}:
             #st.write("Confirmed League:", st.session_state.opt2, "with IDs:",
                      #st.session_state.leagues[st.session_state.opt2])
