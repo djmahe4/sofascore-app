@@ -119,7 +119,8 @@ def create_radar_chart(df):
 
         ax.plot(angles, values, marker='o', label=df['Players'][i], color=palette[i])
         ax.fill(angles, values, alpha=0.25, color=palette[i]) # Fill the area
-
+    plt.annotate('@DJMahe04', xy=(0.1, 0.1), xycoords='axes fraction',  # Position in axes coordinates
+        fontsize=12, ha='left', va='bottom', alpha=0.4)
     ax.set_xticks(angles[:-1])
     ax.set_xticklabels(categories)
     ax.set_yticks(np.arange(0, 11, 2)) # Adjust range as needed
